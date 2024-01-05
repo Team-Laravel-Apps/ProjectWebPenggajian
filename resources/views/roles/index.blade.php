@@ -16,8 +16,8 @@
                                     <span><i class="fa fa-search"></i> </span>
                                 </div>
                             </div>
-                            <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
-                        </div> 
+                            <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search">
+                        </div>
                         <a href="{{ route('roles.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
                             <i class="fas fa-user-plus fa-fw"></i> Tambah
                         </a>
@@ -25,7 +25,7 @@
                 </form>
             </div>
         </div>
-    
+
         <div class="content pb-5">
               <div class="container-fluid">
                 <div class="row">
@@ -38,23 +38,33 @@
                             <table id="datatable" class="table table-hover table-striped ">
                                 <thead class="bg-white">
                                     <tr>
-                                        <th style="min-width:50px;"></th> 
-                                        <th>Name</th> 
+                                        <th class="text-center" style="width: 100px;">#</th>
+                                        <th>Name</th>
                                         <th>Display Name</th>
                                     </tr>
-                                </thead> 
+                                </thead>
                                 <tbody>
                                     @foreach ($roles as $item)
                                         <tr id="hide{{ $item->id }}">
-                                            <td class="text-left">
-                                                <a href="#" class="text-secondary nav-link p-0" title="Lihat opsi" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu text-center">
-                                                    <a href="{{ route('roles.edit', $item->id) }}" class="text-secondary mx-2" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a> 
-                                                    <a href="javascript:void(0)" onClick="hapus({{$item->id}})" class="text-secondary ml-2" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></a>
+                                            <td class="text-center">
+                                                <a href="#" class="text-secondary nav-link p-0" role="button"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="{{ route('roles.edit', $item->id) }}">
+                                                        <i class="far fa-edit mr-1"></i> Edit
+                                                    </a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="javascript:void(0)"
+                                                        onClick="hapus({{ $item->id }})">
+                                                        <i class="far fa-trash-alt mr-2"></i> Hapus
+                                                    </a>
                                                 </div>
                                             </td>
-                                            <td>{{ $item->name }}</td> 
-                                            <td >{{ $item->display_name}}</td> 
+
+                                            <td>{{ $item->name }}</td>
+                                            <td >{{ $item->display_name}}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -99,10 +109,10 @@
                         success: function(html)
                         {
                             swal("Deleted", "Data Berhasil Di Hapus.", "success");
-                            $("#hide"+id).hide(300);   
+                            $("#hide"+id).hide(300);
                         }
                     });
-                    
+
                 }else{
                     swal("Canceled", "Anda Membatalkan! :)","error");
                 }

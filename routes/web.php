@@ -85,7 +85,7 @@ Route::middleware('auth')->group(function(){
             Route::patch('salary/{salary}/update', 'SalaryController@update')->name('salary.update');
             Route::get('staff/get_salary', 'SalaryController@getSalary');
             Route::get('salary/export/excel/id={id}/filter={filter}', 'SalaryController@excel')->name('salary.export.excel');
-        
+
             Route::get('overtime/create', 'OvertimeController@create')->name('overtime.create');
             Route::post('overtime', 'OvertimeController@store')->name('overtime.store');
             Route::get('overtime/{overtime}/edit', 'OvertimeController@edit')->name('overtime.edit');

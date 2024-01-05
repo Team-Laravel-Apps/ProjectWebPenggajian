@@ -24,12 +24,12 @@ class AbsensiController extends Controller
                                 ->get();
         $data['count']  =  count($data['absensi']);
         return view('absensi.master.index', $data);
-    }   
+    }
 
     public function create()
     {
         $query = Absensi::select('code')->max('code');
-        $kode_count = substr($query, 11) + 1;
+        $kode_count = intval(substr($query, 11)) + 1;
         $maxkode = sprintf("%03s",$kode_count);
         $create_code = "ABSEN-KODE-".$maxkode;
         $data['code']  = $create_code;
@@ -62,7 +62,7 @@ class AbsensiController extends Controller
             ];
             return redirect()->back()->with($message);
         }
-       
+
         $data['title'] = "Absen Harian";
         $data['request']  = $request;
         $keterangan = new Keterangan();
@@ -80,7 +80,7 @@ class AbsensiController extends Controller
         $a      = 0;
         if($request->schedule_id)
         {
-            foreach ($request->schedule_id as $score) 
+            foreach ($request->schedule_id as $score)
             {
                 if( ! empty($score))
                 {

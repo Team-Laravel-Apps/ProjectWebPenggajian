@@ -8,16 +8,16 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User; 
+use App\Models\User;
 
 
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-  
+
     protected $redirectTo = RouteServiceProvider::HOME;
-   
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -48,11 +48,11 @@ class LoginController extends Controller
             return redirect()->back()->with($message);
         }
 
-     
+
         $message = [
             'success'=> true,
             'alert-type' => 'success',
-            'message' => 'Selamat datang '.ucwords(Auth::user()->name).' di Sistem Informasi Pendataan dan Gaji Karyawan'
+            'message' => 'Selamat datang '.ucwords(Auth::user()->name).' di Sistem Absensi Karyawan'
         ];
         return redirect()->route('home')->with($message);
     }

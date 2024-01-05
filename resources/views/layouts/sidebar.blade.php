@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-warning elevation-4">
-    <a href="{{ route('home') }}" class="brand-link bg-white">
-        <img src="{{ asset('img/Logo.png') }}" alt="Logo" style="opacity: .9; width: 80%;" height="auto">
+    <a href="{{ route('home') }}" class="brand-link bg-white text-center">
+        <img src="{{ asset('img/Logo.png') }}" alt="Logo" style="opacity: .9; width: 70%;" height="auto">
     </a>
 
 
