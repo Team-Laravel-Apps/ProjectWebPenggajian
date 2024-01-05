@@ -1,6 +1,6 @@
-Aplikasi Sistem Informasi Pendataan dan Gaji Karyawan Menggunakan Framework Laravel 7.*
+Aplikasi Sistem Informasi Pendataan dan Absensi Karyawan Menggunakan Framework Laravel 7.*
 
-Created By : [Tasrin Adiputra](https://www.facebook.com/tasrinteknik)
+Created By : [Kadek Satria Kantra Wibawa](https://www.instagram.com/kantrawibawa/)
 
 Untuk menjalankan Aplikasi ini silahkan jalankan perintah berikut pada command promt / CMD / Git CMD anda
 
